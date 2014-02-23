@@ -8,8 +8,13 @@ public class Grep {
 
     private static ArrayList<String> stringsToFind;
 
-    private static void checkFile(File f){
+    private static void checkFile(File f) {
+        try (InputStreamReader in = new InputStreamReader(new FileInputStream(f))) {
 
+            in.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -18,8 +23,8 @@ public class Grep {
         if (listOfFiles == null) {
             return;
         }
-        for(File f: listOfFiles){
-            if (f.isDirectory()){
+        for (File f : listOfFiles) {
+            if (f.isDirectory()) {
                 bypassFiles(f);
             } else {
                 checkFile(f);
@@ -28,7 +33,7 @@ public class Grep {
     }
 
     public static void main(String[] args) {
-        stringsToFind = new ArrayList<String>();
+        stringsToFind = new ArrayList<>();
         if (args.length == 0) {
             System.out.print("Wrong parameters");
         } else if (args.length == 1 && "-".equals(args[1])) {
