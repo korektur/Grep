@@ -7,10 +7,26 @@ import java.util.Collections;
 public class Grep {
 
     private static ArrayList<String> stringsToFind;
+    private static final int READ_LENGTH = 2000;
+    private static final String[] CHAR_SETS = {"UTF-8", "KOI8-R", "CP1251", "CP866"};
 
     private static void checkFile(File f) {
-        try (InputStreamReader in = new InputStreamReader(new FileInputStream(f))) {
-
+        try (RandomAccessFile in = new RandomAccessFile(f, "r")) {
+            byte[] oldBytes = new byte[READ_LENGTH];
+            int oldLength = in.read(oldBytes);
+            byte[] newBytes = new byte[READ_LENGTH];
+            int newLength = in.read(newBytes);
+            while (oldLength != 0) {
+                for (String charSet : CHAR_SETS) {
+                    String s = (new String(oldBytes, 0, oldLength, charSet)) +
+                            (new String(newBytes, 0, newLength, charSet));
+                    for (String toFind : stringsToFind) {
+                        if (s.contains(toFind)) {
+                            System.out.println(f.getAbsolutePath() + ": " + s);
+                        }
+                    }
+                }
+            }
             in.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -41,6 +57,7 @@ public class Grep {
                 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
                 String[] input = in.readLine().split(" ");
                 Collections.addAll(stringsToFind, input);
+
                 in.close();
             } catch (IOException e) {
                 e.printStackTrace();

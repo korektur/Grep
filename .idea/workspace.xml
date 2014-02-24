@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="861b70ce-29fd-4540-9fc0-9e8164f47854" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Grep.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,7 +70,7 @@
       <file leaf-file-name="Grep.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="0" selection-start="138" selection-end="1562" vertical-scroll-proportion="1.1377953" vertical-offset="34" max-vertical-offset="1020">
+            <state line="28" column="13" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.59057075" vertical-offset="0" max-vertical-offset="1309">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,10 +96,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="916" />
+    <option name="width" value="1600" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -129,8 +127,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -169,6 +165,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -438,6 +436,7 @@
       <workItem from="1392728158437" duration="516000" />
       <workItem from="1392728678692" duration="505000" />
       <workItem from="1393064104734" duration="235000" />
+      <workItem from="1393231832250" duration="2202000" />
     </task>
     <task id="LOCAL-00001" summary="upd&#10;">
       <created>1392454283933</created>
@@ -447,11 +446,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5133000" />
+    <option name="totallyTimeSpent" value="7335000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="916" extended-state="0" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1600" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -473,11 +472,11 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32951653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -504,6 +503,15 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="0" selection-start="138" selection-end="1562" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1020">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="320" selection-end="320" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1020">
@@ -551,7 +559,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="0" selection-start="138" selection-end="1562" vertical-scroll-proportion="1.1377953" vertical-offset="34" max-vertical-offset="1020">
+        <state line="28" column="13" selection-start="1146" selection-end="1146" vertical-scroll-proportion="0.59057075" vertical-offset="0" max-vertical-offset="1309">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
