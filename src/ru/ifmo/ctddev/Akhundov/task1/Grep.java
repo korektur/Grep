@@ -26,6 +26,9 @@ public class Grep {
                         }
                     }
                 }
+                oldLength = newLength;
+                oldBytes = newBytes;
+                newLength = in.read(newBytes);
             }
             in.close();
         } catch (IOException e) {
@@ -52,7 +55,7 @@ public class Grep {
         stringsToFind = new ArrayList<>();
         if (args.length == 0) {
             System.out.print("Wrong parameters");
-        } else if (args.length == 1 && "-".equals(args[1])) {
+        } else if (args.length == 1 && "-".equals(args[0])) {
             try {
                 BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
                 String[] input = in.readLine().split(" ");
