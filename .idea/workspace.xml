@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="861b70ce-29fd-4540-9fc0-9e8164f47854" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/ArraySetTests.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_11.xml" />
-      <change type="MOVED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\Grep.iml" afterPath="$PROJECT_DIR$/JavaHW.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NavigableSetTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/SortedSetTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Tester.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/quickcheck_0_6.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/ArraySetTests.java" afterPath="$PROJECT_DIR$/tests/ArraySetTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/JavaHW.iml" afterPath="$PROJECT_DIR$/JavaHW.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Grep.iws" />
@@ -95,6 +95,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/src/SortedSetTest.java" line="47" class="ru.ifmo.ctddev.Akhundov.task2.SortedSetTest" package="ru.ifmo.ctddev.Akhundov.task2">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -117,8 +132,52 @@
       <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="12" selection-start="582" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+            <state line="6" column="13" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="697">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tester.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Tester.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NavigableSetTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/NavigableSetTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="4" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0" vertical-offset="2545" max-vertical-offset="3077">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SortedSetTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/SortedSetTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="80" column="4" selection-start="3153" selection-end="3153" vertical-scroll-proportion="0.0" vertical-offset="6944" max-vertical-offset="8075">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#990#1161#0" expanded="true" />
+                <element signature="e#1154#1155#0" expanded="true" />
+                <element signature="e#3244#3388#0" expanded="true" />
+                <element signature="e#3377#3378#0" expanded="true" />
+                <element signature="e#5920#6211#0" expanded="true" />
+                <element signature="e#6200#6201#0" expanded="true" />
+                <element signature="e#7249#7487#0" expanded="true" />
+                <element signature="e#7477#7478#0" expanded="true" />
+                <element signature="e#11493#11523#1" expanded="true" />
+                <element signature="e#15978#16286#0" expanded="true" />
+                <element signature="e#16275#16276#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,18 +185,11 @@
       <file leaf-file-name="ArraySet.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="178" column="29" selection-start="5026" selection-end="5026" vertical-scroll-proportion="0.42481202" vertical-offset="2715" max-vertical-offset="5168">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ArraySetTests.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/ArraySetTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="149" column="0" selection-start="4232" selection-end="4232" vertical-scroll-proportion="0.0" vertical-offset="2035" max-vertical-offset="2635">
+            <state line="217" column="13" selection-start="6343" selection-end="6343" vertical-scroll-proportion="5.281955" vertical-offset="879" max-vertical-offset="5287">
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1241#1271#0" expanded="true" />
+                <element signature="e#1327#1506#0" expanded="true" />
+                <element signature="e#1495#1496#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,9 +209,17 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java" />
         <option value="$PROJECT_DIR$/tests/ArraySetTests.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/SortedSet.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/SortedSetTest.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/NavigableSetTest.java" />
+        <option value="$PROJECT_DIR$/tests/Tester.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Tester.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/SortedSetTest.java" />
+        <option value="$PROJECT_DIR$/src/NavigableSetTest.java" />
+        <option value="$PROJECT_DIR$/src/SortedSetTest.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java" />
       </list>
     </option>
   </component>
@@ -241,6 +301,20 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Grep" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Akhundov" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -303,7 +377,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/quickcheck-0.6.jar!/" />
     <property name="SearchEverywhereHistory" value="" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -314,11 +388,14 @@
     <property name="Repository.Attach.Sources" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Grep" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArrayTest">
+  <component name="RunManager" selected="Application.Tests">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -570,6 +647,29 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="Tests" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Tester" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="NavigableSet ru.ifmo.ctddev.Akhundov.task2.ArraySet" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="JavaHW" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <configuration default="false" name="ArrayTest" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="JavaHW" />
@@ -599,10 +699,11 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Grep" />
       <item index="1" class="java.lang.String" itemvalue="Application.ArraySet" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.ArrayTest" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Tests" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.ArrayTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -627,7 +728,7 @@
       <workItem from="1393842265157" duration="35000" />
       <workItem from="1394009057732" duration="6795000" />
       <workItem from="1394019325172" duration="28000" />
-      <workItem from="1394025372401" duration="9793000" />
+      <workItem from="1394025372401" duration="23140000" />
     </task>
     <task id="LOCAL-00001" summary="upd&#10;">
       <created>1392454283933</created>
@@ -641,33 +742,53 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29469000" />
+    <option name="totallyTimeSpent" value="42816000" />
+  </component>
+  <component name="TodoView" selected-index="0">
+    <todo-panel id="selected-file">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="default-changelist">
+      <are-packages-shown value="false" />
+      <are-modules-shown value="false" />
+      <flatten-packages value="false" />
+      <is-autoscroll-to-source value="false" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3626444" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="688" y="69" width="824" height="382" />
+      <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3626444" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" x="688" y="69" width="824" height="382" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -709,7 +830,9 @@
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="697">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -730,7 +853,11 @@
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="16" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="4760">
-          <folding />
+          <folding>
+            <element signature="e#1241#1271#0" expanded="true" />
+            <element signature="e#1327#1506#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -753,7 +880,9 @@
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="0" selection-start="570" selection-end="570" vertical-scroll-proportion="0.0" vertical-offset="166" max-vertical-offset="697">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -774,7 +903,11 @@
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="16" selection-start="1139" selection-end="1139" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4760">
-          <folding />
+          <folding>
+            <element signature="e#1241#1271#0" expanded="true" />
+            <element signature="e#1327#1506#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -797,14 +930,20 @@
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="45" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="238">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="280" column="9" selection-start="7280" selection-end="7280" vertical-scroll-proportion="0.0" vertical-offset="4409" max-vertical-offset="5236">
-          <folding />
+          <folding>
+            <element signature="e#1241#1271#0" expanded="true" />
+            <element signature="e#1327#1506#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -818,14 +957,20 @@
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="45" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="238">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="280" column="9" selection-start="7280" selection-end="7280" vertical-scroll-proportion="0.0" vertical-offset="4409" max-vertical-offset="5236">
-          <folding />
+          <folding>
+            <element signature="e#1241#1271#0" expanded="true" />
+            <element signature="e#1327#1506#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -839,14 +984,20 @@
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="45" selection-start="147" selection-end="147" vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="238">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="273" column="46" selection-start="6999" selection-end="6999" vertical-scroll-proportion="0.0" vertical-offset="4641" max-vertical-offset="5236">
-          <folding />
+          <folding>
+            <element signature="e#1241#1271#0" expanded="true" />
+            <element signature="e#1327#1506#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -920,26 +1071,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java">
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.11-sources.jar!/org/junit/runners/BlockJUnit4ClassRunner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="12" selection-start="582" selection-end="680" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
+        <state line="49" column="0" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.0" vertical-offset="258" max-vertical-offset="6647">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.11-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="240" column="0" selection-start="9451" selection-end="9451" vertical-scroll-proportion="0.31779662" vertical-offset="3182" max-vertical-offset="5899">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.11-sources.jar!/org/junit/rules/TestWatcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="61" column="0" selection-start="1835" selection-end="1835" vertical-scroll-proportion="0.33262712" vertical-offset="744" max-vertical-offset="2431">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.11-sources.jar!/org/junit/rules/RunRules.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="0" selection-start="471" selection-end="471" vertical-scroll-proportion="0.34018266" vertical-offset="157" max-vertical-offset="595">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/junit-4.11-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="417" selection-end="417" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/ArraySetTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="149" column="0" selection-start="4232" selection-end="4232" vertical-scroll-proportion="0.0" vertical-offset="2035" max-vertical-offset="2635">
+        <state line="174" column="25" selection-start="5162" selection-end="5162" vertical-scroll-proportion="4.1221805" vertical-offset="765" max-vertical-offset="3128">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="0" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="13" selection-start="135" selection-end="135" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="697">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NavigableSetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="4" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3077">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SortedSetTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="4" selection-start="3153" selection-end="3153" vertical-scroll-proportion="0.0" vertical-offset="6944" max-vertical-offset="8075">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#990#1161#0" expanded="true" />
+            <element signature="e#1154#1155#0" expanded="true" />
+            <element signature="e#3244#3388#0" expanded="true" />
+            <element signature="e#3377#3378#0" expanded="true" />
+            <element signature="e#5920#6211#0" expanded="true" />
+            <element signature="e#6200#6201#0" expanded="true" />
+            <element signature="e#7249#7487#0" expanded="true" />
+            <element signature="e#7477#7478#0" expanded="true" />
+            <element signature="e#11493#11523#1" expanded="true" />
+            <element signature="e#15978#16286#0" expanded="true" />
+            <element signature="e#16275#16276#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="178" column="29" selection-start="5026" selection-end="5026" vertical-scroll-proportion="0.42481202" vertical-offset="2715" max-vertical-offset="5168">
-          <folding />
+        <state line="217" column="13" selection-start="6343" selection-end="6343" vertical-scroll-proportion="5.281955" vertical-offset="879" max-vertical-offset="5287">
+          <folding>
+            <element signature="e#1241#1271#0" expanded="true" />
+            <element signature="e#1327#1506#0" expanded="true" />
+            <element signature="e#1495#1496#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1008,7 +1236,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>junit:junit:4.11</last-edited>
+          <last-edited>quickcheck-0.6</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

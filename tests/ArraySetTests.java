@@ -140,10 +140,39 @@ public class ArraySetTests {
         assertEquals(7, (int)it.next());
     }
 
+    @Test
     public void descendingIteratorTest() {
         Iterator<Integer> it = set.descendingIterator();
         it.next();
         it.next();
         assertEquals(7, (int)it.next());
+    }
+
+    @Test
+    public void headSetTest2() {
+        SortedSet<Integer> a = set.headSet(7, true);
+        Integer[] x = {1, 2, 3, 4, 5, 6, 7};
+        NavigableSet<Integer> set1 = new ArraySet<>(Arrays.asList(x));
+        assertEquals(true, a.equals(set1));
+        a = set.headSet(0, true);
+        Integer[] xx = {};
+        set1 = new ArraySet<>(Arrays.asList(xx));
+        assertEquals(true, a.equals(set1));
+        a = set.headSet(10, true);
+        assertEquals(true, a.equals(set));
+    }
+
+    @Test
+    public void tailSetTest2() {
+        SortedSet<Integer> a = set.tailSet(7, true);
+        Integer[] x = {7, 8, 9};
+        NavigableSet<Integer> set1 = new ArraySet<>(Arrays.asList(x));
+        assertEquals(true, a.equals(set1));
+        a = set.tailSet(10, true);
+        Integer[] xx = {};
+        set1 = new ArraySet<>(Arrays.asList(xx));
+        assertEquals(true, a.equals(set1));
+        a = set.tailSet(0, true);
+        assertEquals(true, a.equals(set));
     }
 }

@@ -7,7 +7,12 @@ public class ArraySet<E> implements NavigableSet<E> {
     private final ArrayList<E> array;
     private boolean defaultComparator;
 
-    public ArraySet(Comparator<? super E> comparator, Collection<E> collection) {
+    public ArraySet() {
+        comparator = null;
+        array = new ArrayList<>();
+    }
+
+    public ArraySet(Collection<E> collection, Comparator<? super E> comparator) {
         ArrayList<E> tmp = new ArrayList<>(collection);
         this.comparator = comparator;
         Collections.sort(tmp, comparator);
@@ -24,13 +29,20 @@ public class ArraySet<E> implements NavigableSet<E> {
         defaultComparator = false;
     }
 
+    private ArraySet(Collection<E> collection, Comparator<? super E> comparator, boolean defaultComparator) {
+        this.array = new ArrayList<>(collection);
+        this.comparator = comparator;
+        this.defaultComparator = defaultComparator;
+    }
+
+    @SuppressWarnings("unchecked")
     public ArraySet(Collection<E> c) {
-        this(new Comparator<E>() {
+        this(c, new Comparator<E>() {
             @Override
             public int compare(E o1, E o2) {
                 return ((Comparable<? super E>) o1).compareTo(o2);
             }
-        }, c);
+        });
         defaultComparator = true;
     }
 
@@ -106,47 +118,31 @@ public class ArraySet<E> implements NavigableSet<E> {
     @Override
     public E floor(E e) {
         int index = Collections.binarySearch(array, e, comparator);
-        if (index < 0) {
-            index = -index - 1;
-        }
-        if (isEmpty() || (index == 0 && comparator.compare(array.get(0), e) != 0)) {
-            return null;
-        }
-        if (index < array.size() && comparator.compare(array.get(index), e) <= 0) {
+        if (index >= 0) {
             return array.get(index);
         }
-        return array.get(index - 1);
+        index = -index - 1;
+        return index == 0 ? null : array.get(index - 1);
     }
 
     @Override
     public E ceiling(E e) {
         int index = Collections.binarySearch(array, e, comparator);
-        if (index < 0) {
-            index = -index - 1;
-        }
-        if (isEmpty() || index == array.size() ||
-                (index == array.size() - 1 && comparator.compare(e, array.get(index)) != 0)) {
-            return null;
-        }
-        if (index < array.size() && comparator.compare(e, array.get(index)) <= 0) {
+        if (index >= 0) {
             return array.get(index);
         }
-        return array.get(index + 1);
+        index = -index - 1;
+        return index == array.size() ? null : array.get(index);
     }
 
     @Override
     public E higher(E e) {
         int index = Collections.binarySearch(array, e, comparator);
-        if (index < 0) {
-            index = -index - 1;
+        if (index >= 0) {
+            return index == array.size() - 1 ? null : array.get(index + 1);
         }
-        if (index == array.size() || (index == array.size() - 1 && comparator.compare(e, array.get(index)) >= 0)) {
-            return null;
-        }
-        if (comparator.compare(e, array.get(index)) < 0) {
-            return array.get(index);
-        }
-        return array.get(index + 1);
+        index = -index - 1;
+        return index == array.size() ? null : array.get(index);
     }
 
     @Override
@@ -167,7 +163,7 @@ public class ArraySet<E> implements NavigableSet<E> {
 
     @Override
     public NavigableSet<E> descendingSet() {
-        return new ArraySet<>(Collections.reverseOrder(comparator), array);
+        return new ArraySet<>(array, Collections.reverseOrder(comparator), defaultComparator);
     }
 
     @Override
@@ -177,17 +173,33 @@ public class ArraySet<E> implements NavigableSet<E> {
 
     @Override
     public NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive) {
-        return null;
+        return tailSet(fromElement, fromInclusive).headSet(toElement, toInclusive);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public NavigableSet<E> headSet(E toElement, boolean inclusive) {
-        return null;
+        int index = Collections.binarySearch(array, toElement, comparator);
+        if (inclusive && index >= 0) {
+            ++index;
+        }
+        if (index < 0) {
+            index = -index - 1;
+        }
+        return (NavigableSet)new ArraySet<E>(array.subList(0, index), comparator, defaultComparator);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public NavigableSet<E> tailSet(E fromElement, boolean inclusive) {
-        return null;
+        int index = Collections.binarySearch(array, fromElement, comparator);
+        if (!inclusive && index >= 0) {
+            ++index;
+        }
+        if (index < 0) {
+            index = -index - 1;
+        }
+        return (NavigableSet)new ArraySet<E>(array.subList(index, array.size()), comparator, defaultComparator);
     }
 
     @Override
@@ -263,26 +275,16 @@ public class ArraySet<E> implements NavigableSet<E> {
         return tailSet(fromElement).headSet(toElement);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public SortedSet<E> headSet(E toElement) {
-        int index = Collections.binarySearch(array, toElement, comparator);
-        if (index < 0) {
-            index = -index - 1;
-        }
-        return new ArraySet<>(comparator, array.subList(0, index));
+        return headSet(toElement, false);
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public SortedSet<E> tailSet(E fromElement) {
-        int index = Collections.binarySearch(array, fromElement, comparator);
-        if (index >= size()) {
-            return new ArraySet<>(comparator, new ArrayList<E>());
-        }
-        if (index < 0) {
-            index = -index - 1;
-        }
-        index = Math.max(index, 0);
-        return new ArraySet<>(comparator, array.subList(index, size()));
+        return (SortedSet)tailSet(fromElement, true);
     }
 
     @Override
