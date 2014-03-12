@@ -1,52 +1,62 @@
 package ru.ifmo.ctddev.Akhundov.task3;
 
+import info.kgeorgiy.java.advanced.implementor.Impler;
+import info.kgeorgiy.java.advanced.implementor.ImplerException;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
+import java.util.*;
 
-public class Implementor {
+public class Implementor implements Impler {
 
-    private final Class<?> classToImplement;
-    private final FileWriter out;
-    private final Method[] methods;
-    private final Constructor[] constructors;
-    private final String separator = System.lineSeparator();
-    private final String tab = "    ";
+    private Class<?> classToImplement;
+    private FileWriter out;
+    private List<Method> methods;
+    private Constructor[] constructors;
+    private String separator = System.lineSeparator();
+    private String tab = "    ";
 
-    public static void main(String[] args) {
-        if (args.length == 0) {
-            System.out.println("Wrong Arguments");
-            return;
+    public void implement(Class<?> token, File root) throws ImplerException {
+        int mod = token.getModifiers();
+        if (Modifier.isFinal(mod) || token.isPrimitive()){
+            throw new ImplerException();
         }
-        String classPath = args[0];
         try {
-            Class<?> clazz = Class.forName(classPath);
-            String implName = clazz.getSimpleName() + "Impl";
-            File f = new File("src/" + implName + ".java");
+            String implName = token.getSimpleName() + "Impl";
+            String path = root.getName() + "/"
+                    + token.getPackage().getName().replaceAll("\\.", "/");
+            File f = new File(path);
+            f.mkdirs();
+            f = new File(path + "/" + token.getSimpleName() + "Impl.java");
             try (FileWriter out = new FileWriter(f)) {
-                Implementor implementor = new Implementor(clazz, out);
-                implementor.writeClass();
+                this.classToImplement = token;
+                this.out = out;
+                constructors = classToImplement.getConstructors();
+                boolean hasDefaultConstr = false;
+                /*for(Constructor constructor : constructors) {
+                    if (constructor.getExceptionTypes().length == 0){
+                        hasDefaultConstr = true;
+                    }
+                }
+                if (!hasDefaultConstr) {
+                    throw new ImplerException();
+                }*/
+                methods = getAllMethods(classToImplement);
+                writeClass();
                 out.close();
             }
-        } catch (ClassNotFoundException e) {
-            System.out.println("Class Not Found");
         } catch (IOException e) {
             System.out.println("Error");
         }
     }
 
-    public Implementor(Class<?> classToImplement, FileWriter out) {
-        this.classToImplement = classToImplement;
-        this.out = out;
-        methods = classToImplement.getMethods();
-        constructors = classToImplement.getConstructors();
-
-    }
-
     public void writeClass() throws IOException {
+        out.append("package " + classToImplement.getPackage().getName() + ";" + separator);
         out.append("public class " + classToImplement.getSimpleName() + "Impl");
         if (classToImplement.isInterface()) {
             out.append(" implements ");
@@ -54,16 +64,19 @@ public class Implementor {
             out.append(" extends ");
         }
         out.append(classToImplement.getCanonicalName() + " {" + separator);
-        for (Method method : methods) {
-            writeMethod(method);
-        }
         for (Constructor constructor : constructors) {
             writeConstructors(constructor);
+        }
+        for (Method method : methods) {
+            writeMethod(method);
         }
         out.append("}");
     }
 
-    public void writeConstructors(Constructor constructor) throws IOException{
+    public void writeConstructors(Constructor constructor) throws IOException {
+        if (Modifier.isTransient(constructor.getModifiers())) {
+            return;
+        }
         int modifiers = constructor.getModifiers();
         out.append(tab + Modifier.toString(modifiers));
         out.append(" " + classToImplement.getSimpleName() + "Impl");
@@ -74,6 +87,9 @@ public class Implementor {
         int argsNum = constructor.getParameterTypes().length;
         for (int i = 0; i < argsNum; ++i) {
             out.append("arg" + i);
+            if (i < argsNum - 1) {
+                out.append(", ");
+            }
         }
         out.append(");" + separator);
         out.append(tab + "}" + separator);
@@ -83,7 +99,7 @@ public class Implementor {
     public void writeMethod(Method method) throws IOException {
         int modifiers = method.getModifiers();
         if (Modifier.isFinal(modifiers) || Modifier.isNative(modifiers) || Modifier.isPrivate(modifiers)
-                || !Modifier.isAbstract(modifiers)){
+                || Modifier.isTransient(modifiers) || !Modifier.isAbstract(modifiers)) {
             return;
         }
         modifiers ^= Modifier.ABSTRACT;
@@ -104,7 +120,7 @@ public class Implementor {
                 out.append("true");
             } else if ("char".equals(returnType.getCanonicalName())) {
                 out.append("\'1\'");
-            } else {
+            } else if (!"void".equals(returnType.getCanonicalName())) {
                 out.append("1");
             }
         } else {
@@ -115,9 +131,12 @@ public class Implementor {
 
     }
 
-    private void writeArgs(Class<?>[] args) throws IOException{
+    private void writeArgs(Class<?>[] args) throws IOException {
         out.append("(");
-        for(int i = 0; i < args.length; ++i){
+        for (int i = 0; i < args.length; ++i) {
+            int mod = args[i].getModifiers();
+            Modifier.methodModifiers();
+
             out.append(args[i].getCanonicalName() + " arg" + i);
             if (i < args.length - 1) {
                 out.append(", ");
@@ -131,7 +150,7 @@ public class Implementor {
             return;
         }
         out.append(" throws ");
-        for(int i = 0; i < exceptions.length; ++i) {
+        for (int i = 0; i < exceptions.length; ++i) {
             out.append(exceptions[i].getCanonicalName());
             if (i < exceptions.length - 1) {
                 out.append(", ");
@@ -139,4 +158,55 @@ public class Implementor {
         }
     }
 
+    private boolean compareMethods(Method a, Method b) {
+        if (a.getName().equals(b.getName())) {
+            if (a.getReturnType().equals(b.getReturnType())) {
+                Class<?>[] argsA = a.getParameterTypes();
+                Class<?>[] argsB = b.getParameterTypes();
+                if (argsA.length == argsB.length) {
+                    for (int i = 0; i < argsA.length; ++i) {
+                        if (!argsA[i].getCanonicalName().equals(argsB[i].getCanonicalName())) {
+                            return false;
+                        }
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private List<Method> getAllMethods(Class<?> clazz) {
+        if (clazz == null) {
+            return new ArrayList<>();
+        }
+        List<Method> methodsToOverride = new ArrayList<>();
+        List<Method> methods = new ArrayList<>();
+        methods.addAll(Arrays.asList(clazz.getDeclaredMethods()));
+        Class<?>[] interfaces = clazz.getInterfaces();
+        for (Class<?> interf : interfaces) {
+            methods.addAll(getAllMethods(interf));
+        }
+        Class<?> superClass = clazz.getSuperclass();
+        methods.addAll(getAllMethods(superClass));
+        for (Method method : methods) {
+            boolean fl = true;
+            for (int i = 0; i < methodsToOverride.size(); ++i) {
+                Method m = methodsToOverride.get(i);
+                if (compareMethods(m, method)) {
+                    int m1 = m.getModifiers();
+                    int m2 = method.getModifiers();
+                    if (Modifier.isAbstract(m1) && !Modifier.isAbstract(m2)) {
+                        methodsToOverride.remove(i);
+                        methodsToOverride.add(method);
+                    }
+                    fl = false;
+                }
+            }
+            if (fl) {
+                methodsToOverride.add(method);
+            }
+        }
+        return methodsToOverride;
+    }
 }
