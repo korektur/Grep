@@ -25,7 +25,7 @@ public class Implementor {
         try {
             Class<?> clazz = Class.forName(classPath);
             String implName = clazz.getSimpleName() + "Impl";
-            File f = new File(implName + ".java");
+            File f = new File("src/" + implName + ".java");
             try (FileWriter out = new FileWriter(f)) {
                 Implementor implementor = new Implementor(clazz, out);
                 implementor.writeClass();
@@ -57,11 +57,26 @@ public class Implementor {
         for (Method method : methods) {
             writeMethod(method);
         }
+        for (Constructor constructor : constructors) {
+            writeConstructors(constructor);
+        }
         out.append("}");
     }
 
-    public void writeConstructors(Constructor constructor) {
-
+    public void writeConstructors(Constructor constructor) throws IOException{
+        int modifiers = constructor.getModifiers();
+        out.append(tab + Modifier.toString(modifiers));
+        out.append(" " + classToImplement.getSimpleName() + "Impl");
+        writeArgs(constructor.getParameterTypes());
+        writeExceptions(constructor.getExceptionTypes());
+        out.append(" {" + separator);
+        out.append(tab + tab + "super(");
+        int argsNum = constructor.getParameterTypes().length;
+        for (int i = 0; i < argsNum; ++i) {
+            out.append("arg" + i);
+        }
+        out.append(");" + separator);
+        out.append(tab + "}" + separator);
     }
 
 
@@ -71,21 +86,18 @@ public class Implementor {
                 || !Modifier.isAbstract(modifiers)){
             return;
         }
+        modifiers ^= Modifier.ABSTRACT;
         out.append(separator);
         out.append(tab + "@Override" + separator);
         out.append(tab);
-        Class<?>[] classes = method.getParameterTypes();
+        Class<?>[] args = method.getParameterTypes();
         out.append(Modifier.toString(modifiers));
         Class<?> returnType = method.getReturnType();
         out.append(" " + returnType.getCanonicalName());
-        out.append(" " + method.getName() + "(");
-        for (int i = 0; i < classes.length; ++i) {
-            out.append(classes[i].getCanonicalName() + " arg" + i);
-            if (i < classes.length - 1) {
-                out.append(", ");
-            }
-        }
-        out.append(") {" + separator);
+        out.append(" " + method.getName());
+        writeArgs(args);
+        writeExceptions(method.getExceptionTypes());
+        out.append("{" + separator);
         out.append(tab + tab + "return ");
         if (returnType.isPrimitive()) {
             if ("boolean".equals(returnType.getCanonicalName())) {
@@ -101,6 +113,30 @@ public class Implementor {
         out.append(";" + separator);
         out.append(tab + "}" + separator);
 
+    }
+
+    private void writeArgs(Class<?>[] args) throws IOException{
+        out.append("(");
+        for(int i = 0; i < args.length; ++i){
+            out.append(args[i].getCanonicalName() + " arg" + i);
+            if (i < args.length - 1) {
+                out.append(", ");
+            }
+        }
+        out.append(")");
+    }
+
+    private void writeExceptions(Class<?>[] exceptions) throws IOException {
+        if (exceptions.length == 0) {
+            return;
+        }
+        out.append(" throws ");
+        for(int i = 0; i < exceptions.length; ++i) {
+            out.append(exceptions[i].getCanonicalName());
+            if (i < exceptions.length - 1) {
+                out.append(", ");
+            }
+        }
     }
 
 }

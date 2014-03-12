@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="861b70ce-29fd-4540-9fc0-9e8164f47854" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ExpressionImpl.java" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\ExpressionImpl.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Expression.java" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Expression.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Grep.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -98,10 +103,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Implementor.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Implementor.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="58" selection-start="1537" selection-end="1537" vertical-scroll-proportion="-0.981203" vertical-offset="1270" max-vertical-offset="1904">
+            <state line="78" column="25" selection-start="2796" selection-end="2796" vertical-scroll-proportion="0.0" vertical-offset="962" max-vertical-offset="2516">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,10 +114,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ExpressionImpl.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="ExpressionImpl.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ExpressionImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="19" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
+            <state line="8" column="5" selection-start="231" selection-end="231" vertical-scroll-proportion="0.2556391" vertical-offset="0" max-vertical-offset="532">
               <folding />
             </state>
           </provider>
@@ -121,7 +126,7 @@
       <file leaf-file-name="Expression.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Expression.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="38" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+            <state line="6" column="57" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
               <folding />
             </state>
           </provider>
@@ -195,8 +200,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -212,20 +215,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Grep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Grep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Grep" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -285,6 +274,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -299,13 +290,13 @@
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="LayoutCode.rearrangeEntriesJava" value="false" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/ExpressionImpl.java" />
     <property name="SearchEverywhereHistory" value="" />
-    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
+    <property name="options.lastSelected" value="reference.projectsettings.compiler.excludes" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -314,13 +305,13 @@
     <property name="Repository.Attach.Sources" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Руслан\Documents\GitHub\Grep\tests" />
-      <recent name="C:\Users\Руслан\Documents\GitHub\Grep\src" />
-      <recent name="C:\Grep" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Руслан\Documents\GitHub\Grep\src" />
+      <recent name="C:\Users\Руслан\Documents\GitHub\Grep\tests" />
+      <recent name="C:\Grep" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Implementator">
@@ -669,6 +660,7 @@
       <workItem from="1394617213221" duration="1626000" />
       <workItem from="1394620542691" duration="4117000" />
       <workItem from="1394629802908" duration="4853000" />
+      <workItem from="1394635774398" duration="2568000" />
     </task>
     <task id="LOCAL-00001" summary="upd&#10;">
       <created>1392454283933</created>
@@ -682,7 +674,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70930000" />
+    <option name="totallyTimeSpent" value="73498000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -706,7 +698,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3626444" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" x="688" y="69" width="824" height="382" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -718,7 +710,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32692307" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -728,8 +720,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967907" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -760,13 +752,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tests/ArraySetTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="5" selection-start="277" selection-end="549" vertical-scroll-proportion="0.0" vertical-offset="374" max-vertical-offset="3128">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="18" selection-start="875" selection-end="875" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1020">
@@ -1078,26 +1063,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ExpressionImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="19" selection-start="157" selection-end="157" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Expression.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="38" selection-start="114" selection-end="114" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+        <state line="6" column="57" selection-start="162" selection-end="162" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="238">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="58" selection-start="1537" selection-end="1537" vertical-scroll-proportion="-0.981203" vertical-offset="1270" max-vertical-offset="1904">
+        <state line="78" column="25" selection-start="2796" selection-end="2796" vertical-scroll-proportion="0.0" vertical-offset="962" max-vertical-offset="2516">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ExpressionImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="5" selection-start="231" selection-end="231" vertical-scroll-proportion="0.2556391" vertical-offset="0" max-vertical-offset="532">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1158,7 +1143,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
