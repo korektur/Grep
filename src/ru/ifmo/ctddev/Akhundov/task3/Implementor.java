@@ -1,9 +1,9 @@
 package ru.ifmo.ctddev.Akhundov.task3;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
@@ -12,6 +12,7 @@ public class Implementor {
     private final Class<?> classToImplement;
     private final FileWriter out;
     private final Method[] methods;
+    private final Constructor[] constructors;
     private final String separator = System.lineSeparator();
     private final String tab = "    ";
 
@@ -41,6 +42,7 @@ public class Implementor {
         this.classToImplement = classToImplement;
         this.out = out;
         methods = classToImplement.getMethods();
+        constructors = classToImplement.getConstructors();
 
     }
 
@@ -58,10 +60,15 @@ public class Implementor {
         out.append("}");
     }
 
+    public void writeConstructors(Constructor constructor) {
+
+    }
+
 
     public void writeMethod(Method method) throws IOException {
         int modifiers = method.getModifiers();
-        if (Modifier.isFinal(modifiers) || Modifier.isNative(modifiers) || Modifier.isPrivate(modifiers)){
+        if (Modifier.isFinal(modifiers) || Modifier.isNative(modifiers) || Modifier.isPrivate(modifiers)
+                || !Modifier.isAbstract(modifiers)){
             return;
         }
         out.append(separator);
