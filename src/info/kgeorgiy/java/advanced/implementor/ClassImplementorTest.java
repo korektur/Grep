@@ -68,6 +68,7 @@ public class ClassImplementorTest extends InterfaceImplementorTest {
     public void test12_inheritedNonPublicAbstractMethod() {
         test(false, ORB.class);
     }
+
 //
 //    @Test
 //    public void test13_enum() {

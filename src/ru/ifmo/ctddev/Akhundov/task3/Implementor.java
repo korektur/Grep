@@ -1,5 +1,6 @@
 package ru.ifmo.ctddev.Akhundov.task3;
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import info.kgeorgiy.java.advanced.implementor.Impler;
 import info.kgeorgiy.java.advanced.implementor.ImplerException;
 
@@ -23,7 +24,7 @@ public class Implementor implements Impler {
 
     public void implement(Class<?> token, File root) throws ImplerException {
         int mod = token.getModifiers();
-        if (Modifier.isFinal(mod) || token.isPrimitive()){
+        if (Modifier.isFinal(mod) || token.isPrimitive()) {
             throw new ImplerException();
         }
         try {
@@ -36,16 +37,16 @@ public class Implementor implements Impler {
             try (FileWriter out = new FileWriter(f)) {
                 this.classToImplement = token;
                 this.out = out;
-                constructors = classToImplement.getConstructors();
-                boolean hasDefaultConstr = false;
-                /*for(Constructor constructor : constructors) {
+                constructors = classToImplement.getDeclaredConstructors();
+                boolean defaultConstructorIsPrivate = false;
+                for(Constructor constructor : constructors) {
                     if (constructor.getExceptionTypes().length == 0){
-                        hasDefaultConstr = true;
+                        defaultConstructorIsPrivate = Modifier.isPrivate(constructor.getModifiers());
                     }
                 }
-                if (!hasDefaultConstr) {
+                if (defaultConstructorIsPrivate) {
                     throw new ImplerException();
-                }*/
+                }
                 methods = getAllMethods(classToImplement);
                 writeClass();
                 out.close();
@@ -98,11 +99,15 @@ public class Implementor implements Impler {
 
     public void writeMethod(Method method) throws IOException {
         int modifiers = method.getModifiers();
+        boolean fl1 = Modifier.isTransient(modifiers);
         if (Modifier.isFinal(modifiers) || Modifier.isNative(modifiers) || Modifier.isPrivate(modifiers)
-                || Modifier.isTransient(modifiers) || !Modifier.isAbstract(modifiers)) {
+                || !Modifier.isAbstract(modifiers)) {
             return;
         }
         modifiers ^= Modifier.ABSTRACT;
+        if (Modifier.isTransient(modifiers)) {
+            modifiers ^= Modifier.TRANSIENT;
+        }
         out.append(separator);
         out.append(tab + "@Override" + separator);
         out.append(tab);
