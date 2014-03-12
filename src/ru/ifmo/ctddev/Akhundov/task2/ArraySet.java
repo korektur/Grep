@@ -2,10 +2,10 @@ package ru.ifmo.ctddev.Akhundov.task2;
 
 import java.util.*;
 
-public class ArraySet<E> implements NavigableSet<E> {
-    private final Comparator<? super E> comparator;
-    private final ArrayList<E> array;
-    private boolean defaultComparator;
+public class ArraySet<E> extends AbstractSet<E> implements NavigableSet<E> {
+    protected final Comparator<? super E> comparator;
+    protected final List<E> array;
+    protected boolean defaultComparator;
 
     public ArraySet() {
         comparator = null;
@@ -13,10 +13,10 @@ public class ArraySet<E> implements NavigableSet<E> {
     }
 
     public ArraySet(Collection<E> collection, Comparator<? super E> comparator) {
-        ArrayList<E> tmp = new ArrayList<>(collection);
+        List<E> tmp = new ArrayList<>(collection);
         this.comparator = comparator;
         Collections.sort(tmp, comparator);
-        ArrayList<E> uniqueSet = new ArrayList<>();
+        List<E> uniqueSet = new ArrayList<>();
         if (tmp.size() > 0) {
             uniqueSet.add(tmp.get(0));
         }
@@ -29,16 +29,16 @@ public class ArraySet<E> implements NavigableSet<E> {
         defaultComparator = false;
     }
 
-    private ArraySet(Collection<E> collection, Comparator<? super E> comparator, boolean defaultComparator) {
-        this.array = new ArrayList<>(collection);
+    protected ArraySet(List<E> collection, Comparator<? super E> comparator, boolean defaultComparator) {
+        this.array = collection;
         this.comparator = comparator;
         this.defaultComparator = defaultComparator;
     }
 
-    @SuppressWarnings("unchecked")
     public ArraySet(Collection<E> c) {
         this(c, new Comparator<E>() {
             @Override
+            @SuppressWarnings("unchecked")
             public int compare(E o1, E o2) {
                 return ((Comparable<? super E>) o1).compareTo(o2);
             }
@@ -46,65 +46,12 @@ public class ArraySet<E> implements NavigableSet<E> {
         defaultComparator = true;
     }
 
-    @Override
-    public boolean add(E e) {
-        throw new UnsupportedOperationException("add is not supported");
-    }
-
-    @Override
-    public boolean addAll(Collection<? extends E> c) {
-        throw new UnsupportedOperationException("addAll is not supported");
-    }
-
-    @Override
-    public void clear() {
-        throw new UnsupportedOperationException("clear is not supported");
-    }
-
     @SuppressWarnings("unchecked")
     @Override
     public boolean contains(Object o) {
-        return Collections.binarySearch(array, (E) o, comparator) >= 0;
+        return Collections.binarySearch(array, (E)o, comparator) >= 0;
     }
 
-    @Override
-    public boolean containsAll(Collection<?> c) {
-        Iterator<?> it = c.iterator();
-        while (it.hasNext()) {
-            if (!contains(it.next())) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    private class IteratorImpl implements Iterator {
-        private int index;
-
-        public IteratorImpl() {
-            index = 0;
-        }
-
-        @Override
-        public boolean hasNext() {
-            return index < array.size();
-        }
-
-        @Override
-        public E next() {
-            if (hasNext()) {
-                ++index;
-                return array.get(index - 1);
-            }
-            throw new NoSuchElementException("iteration has no more elements");
-        }
-
-        @Override
-        public void remove() {
-            throw new UnsupportedOperationException("remove is not supported");
-        }
-
-    }
 
     @Override
     public E lower(E e) {
@@ -155,15 +102,31 @@ public class ArraySet<E> implements NavigableSet<E> {
         throw new UnsupportedOperationException("pollLast is not supported");
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public Iterator<E> iterator() {
-        return new IteratorImpl();
+        return new Iterator<E>() {
+            Iterator<E> it = array.iterator();
+
+            @Override
+            public boolean hasNext() {
+                return it.hasNext();
+            }
+
+            @Override
+            public E next() {
+                return it.next();
+            }
+
+            @Override
+            public void remove() {
+                throw new UnsupportedOperationException("remove is not supported");
+            }
+        };
     }
 
     @Override
     public NavigableSet<E> descendingSet() {
-        return new ArraySet<>(array, Collections.reverseOrder(comparator), defaultComparator);
+        return new ArraySet<>(array, Collections.reverseOrder(comparator));
     }
 
     @Override
@@ -176,7 +139,6 @@ public class ArraySet<E> implements NavigableSet<E> {
         return tailSet(fromElement, fromInclusive).headSet(toElement, toInclusive);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public NavigableSet<E> headSet(E toElement, boolean inclusive) {
         int index = Collections.binarySearch(array, toElement, comparator);
@@ -186,10 +148,9 @@ public class ArraySet<E> implements NavigableSet<E> {
         if (index < 0) {
             index = -index - 1;
         }
-        return (NavigableSet)new ArraySet<E>(array.subList(0, index), comparator, defaultComparator);
+        return new ArraySet<E>(array.subList(0, index), comparator, defaultComparator);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public NavigableSet<E> tailSet(E fromElement, boolean inclusive) {
         int index = Collections.binarySearch(array, fromElement, comparator);
@@ -199,70 +160,12 @@ public class ArraySet<E> implements NavigableSet<E> {
         if (index < 0) {
             index = -index - 1;
         }
-        return (NavigableSet)new ArraySet<E>(array.subList(index, array.size()), comparator, defaultComparator);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o instanceof ArraySet) {
-            ArraySet set = (ArraySet) o;
-            if (set.size() != size()) {
-                return false;
-            }
-            Iterator it1 = set.iterator();
-            Iterator it2 = iterator();
-            while (it1.hasNext()) {
-                if (!it1.next().equals(it2.next())) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public int hashCode() {
-        int hashCode = 0;
-        for (E e : array) {
-            hashCode += e.hashCode();
-        }
-        return hashCode;
-    }
-
-    @Override
-    public boolean isEmpty() {
-        return array.isEmpty();
-    }
-
-    @Override
-    public boolean remove(Object o) {
-        throw new UnsupportedOperationException("remove is not supported");
-    }
-
-    @Override
-    public boolean removeAll(Collection<?> c) {
-        throw new UnsupportedOperationException("removeAll is not supported");
-    }
-
-    @Override
-    public boolean retainAll(Collection<?> c) {
-        throw new UnsupportedOperationException("retainAll is not supported");
+        return new ArraySet<E>(array.subList(index, array.size()), comparator, defaultComparator);
     }
 
     @Override
     public int size() {
         return array.size();
-    }
-
-    @Override
-    public Object[] toArray() {
-        return array.toArray();
-    }
-
-    @Override
-    public <T> T[] toArray(T[] a) {
-        return array.toArray(a);
     }
 
     @Override
@@ -275,16 +178,14 @@ public class ArraySet<E> implements NavigableSet<E> {
         return tailSet(fromElement).headSet(toElement);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public SortedSet<E> headSet(E toElement) {
         return headSet(toElement, false);
     }
 
-    @SuppressWarnings("unchecked")
     @Override
     public SortedSet<E> tailSet(E fromElement) {
-        return (SortedSet)tailSet(fromElement, true);
+        return tailSet(fromElement, true);
     }
 
     @Override

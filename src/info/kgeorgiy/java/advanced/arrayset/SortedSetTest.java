@@ -1,3 +1,5 @@
+package info.kgeorgiy.java.advanced.arrayset;
+
 import net.java.quickcheck.Generator;
 import net.java.quickcheck.collection.Pair;
 import org.junit.Assert;
@@ -19,6 +21,9 @@ import static net.java.quickcheck.generator.CombinedGeneratorsIterables.*;
 import static net.java.quickcheck.generator.PrimitiveGenerators.fixedValues;
 import static net.java.quickcheck.generator.PrimitiveGenerators.integers;
 
+/**
+ * @author Georgiy Korneev (kgeorgiy@kgeorgiy.info)
+ */
 @RunWith(JUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class SortedSetTest {
@@ -168,7 +173,7 @@ public class SortedSetTest {
         });
     }
 
-   @Test
+    @Test
     public void test09_containsAll() {
         for (Pair<NamedComparator, List<Integer>> pair : withComparator()) {
             final List<Integer> elements = pair.getSecond();
@@ -195,7 +200,7 @@ public class SortedSetTest {
                 SortedSet<Integer> set = performanceSet(10_000);
                 Assert.assertTrue(null, set.containsAll(new ArrayList<>(set)));
             }
-       });
+        });
     }
 
     private void performance(String description, Runnable runnable) {
@@ -249,7 +254,7 @@ public class SortedSetTest {
         set.addAll(elements);
         return set;
     }
-
+    
     protected abstract class NamedComparator implements Comparator<Integer> {
         private final String name;
 

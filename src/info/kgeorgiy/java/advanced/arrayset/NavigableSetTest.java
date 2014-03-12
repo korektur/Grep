@@ -1,3 +1,5 @@
+package info.kgeorgiy.java.advanced.arrayset;
+
 import net.java.quickcheck.collection.Pair;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -14,6 +16,9 @@ import static net.java.quickcheck.generator.CombinedGeneratorsIterables.somePair
 import static net.java.quickcheck.generator.PrimitiveGenerators.fixedValues;
 import static org.junit.Assert.assertEquals;
 
+/**
+ * @author Georgiy Korneev (kgeorgiy@kgeorgiy.info)
+ */
 @RunWith(JUnit4.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class NavigableSetTest extends SortedSetTest {
@@ -154,7 +159,7 @@ public class NavigableSetTest extends SortedSetTest {
                                 set.subSet(from, i % 2 == 1, to, i / 2 == 1),
                                 treeSet.subSet(from, i % 2 == 1, to, i / 2 == 1),
                                 String.format("in subSet(%d, %b, %d, %b) (comparator = %s, elements = %s",
-                                        from, i % 2 == 1,
+                                        from, i %2 == 1,
                                         to, i / 2 == 1,
                                         comparator, elements
                                 )

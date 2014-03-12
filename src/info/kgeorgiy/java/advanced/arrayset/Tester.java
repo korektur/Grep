@@ -1,5 +1,12 @@
+package info.kgeorgiy.java.advanced.arrayset;
+
 import org.junit.runner.JUnitCore;
 
+import java.util.SortedSet;
+
+/**
+ * @author Georgiy Korneev (kgeorgiy@kgeorgiy.info)
+ */
 public class Tester {
     public static void main(String[] args) {
         if (args.length != 2) {
