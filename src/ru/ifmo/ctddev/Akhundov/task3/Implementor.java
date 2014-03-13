@@ -1,13 +1,11 @@
 package ru.ifmo.ctddev.Akhundov.task3;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import info.kgeorgiy.java.advanced.implementor.Impler;
 import info.kgeorgiy.java.advanced.implementor.ImplerException;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -22,13 +20,28 @@ public class Implementor implements Impler {
     private String separator = System.lineSeparator();
     private String tab = "    ";
 
+    public static void main(String[] args) {
+        if (args.length != 2) {
+            System.out.println("wrong args");
+            return;
+        }
+        try {
+            Class<?> token = Class.forName(args[0]);
+            Implementor implementor = new Implementor();
+            implementor.implement(token, new File(args[1]));
+        } catch (ClassNotFoundException e) {
+            System.out.println("Class not found");
+        } catch (ImplerException e) {
+            System.out.println("An error occured");
+        }
+    }
+
     public void implement(Class<?> token, File root) throws ImplerException {
         int mod = token.getModifiers();
         if (Modifier.isFinal(mod) || token.isPrimitive()) {
             throw new ImplerException();
         }
         try {
-            String implName = token.getSimpleName() + "Impl";
             String path = root.getName() + "/"
                     + token.getPackage().getName().replaceAll("\\.", "/");
             File f = new File(path);
@@ -38,13 +51,14 @@ public class Implementor implements Impler {
                 this.classToImplement = token;
                 this.out = out;
                 constructors = classToImplement.getDeclaredConstructors();
-                boolean defaultConstructorIsPrivate = false;
-                for(Constructor constructor : constructors) {
-                    if (constructor.getExceptionTypes().length == 0){
-                        defaultConstructorIsPrivate = Modifier.isPrivate(constructor.getModifiers());
+                boolean allConstructorArePrivate = true;
+                for (Constructor constructor : constructors) {
+                    allConstructorArePrivate = Modifier.isPrivate(constructor.getModifiers());
+                    if (!allConstructorArePrivate) {
+                        break;
                     }
                 }
-                if (defaultConstructorIsPrivate) {
+                if (allConstructorArePrivate && !classToImplement.isInterface()) {
                     throw new ImplerException();
                 }
                 methods = getAllMethods(classToImplement);
@@ -57,14 +71,15 @@ public class Implementor implements Impler {
     }
 
     public void writeClass() throws IOException {
-        out.append("package " + classToImplement.getPackage().getName() + ";" + separator);
-        out.append("public class " + classToImplement.getSimpleName() + "Impl");
+        out.append("package ").append(classToImplement.getPackage().getName()).append(";").append(separator);
+        out.append(separator);
+        out.append("public class ").append(classToImplement.getSimpleName()).append("Impl");
         if (classToImplement.isInterface()) {
             out.append(" implements ");
         } else {
             out.append(" extends ");
         }
-        out.append(classToImplement.getCanonicalName() + " {" + separator);
+        out.append(classToImplement.getCanonicalName()).append(" {").append(separator);
         for (Constructor constructor : constructors) {
             writeConstructors(constructor);
         }
@@ -75,31 +90,33 @@ public class Implementor implements Impler {
     }
 
     public void writeConstructors(Constructor constructor) throws IOException {
-        if (Modifier.isTransient(constructor.getModifiers())) {
+        int modifiers = constructor.getModifiers();
+        if (Modifier.isPrivate(modifiers)) {
             return;
         }
-        int modifiers = constructor.getModifiers();
-        out.append(tab + Modifier.toString(modifiers));
-        out.append(" " + classToImplement.getSimpleName() + "Impl");
+        if (Modifier.isTransient(modifiers)) {
+            modifiers ^= Modifier.TRANSIENT;
+        }
+        out.append(tab).append(Modifier.toString(modifiers));
+        out.append(" ").append(classToImplement.getSimpleName()).append("Impl");
         writeArgs(constructor.getParameterTypes());
         writeExceptions(constructor.getExceptionTypes());
-        out.append(" {" + separator);
-        out.append(tab + tab + "super(");
+        out.append(" {").append(separator);
+        out.append(tab).append(tab).append("super(");
         int argsNum = constructor.getParameterTypes().length;
         for (int i = 0; i < argsNum; ++i) {
-            out.append("arg" + i);
+            out.append("arg").append(Integer.toString(i));
             if (i < argsNum - 1) {
                 out.append(", ");
             }
         }
-        out.append(");" + separator);
-        out.append(tab + "}" + separator);
+        out.append(");").append(separator);
+        out.append(tab).append("}").append(separator);
     }
 
 
     public void writeMethod(Method method) throws IOException {
         int modifiers = method.getModifiers();
-        boolean fl1 = Modifier.isTransient(modifiers);
         if (Modifier.isFinal(modifiers) || Modifier.isNative(modifiers) || Modifier.isPrivate(modifiers)
                 || !Modifier.isAbstract(modifiers)) {
             return;
@@ -109,40 +126,36 @@ public class Implementor implements Impler {
             modifiers ^= Modifier.TRANSIENT;
         }
         out.append(separator);
-        out.append(tab + "@Override" + separator);
-        out.append(tab);
+        out.append(tab).append("@Override").append(separator).append(tab);
         Class<?>[] args = method.getParameterTypes();
         out.append(Modifier.toString(modifiers));
         Class<?> returnType = method.getReturnType();
-        out.append(" " + returnType.getCanonicalName());
-        out.append(" " + method.getName());
+        out.append(" ").append(returnType.getCanonicalName());
+        out.append(" ").append(method.getName());
         writeArgs(args);
         writeExceptions(method.getExceptionTypes());
-        out.append("{" + separator);
-        out.append(tab + tab + "return ");
+        out.append("{").append(separator);
+        out.append(tab).append(tab).append("return ");
         if (returnType.isPrimitive()) {
             if ("boolean".equals(returnType.getCanonicalName())) {
                 out.append("true");
             } else if ("char".equals(returnType.getCanonicalName())) {
-                out.append("\'1\'");
+                out.append("'1'");
             } else if (!"void".equals(returnType.getCanonicalName())) {
                 out.append("1");
             }
         } else {
             out.append("null");
         }
-        out.append(";" + separator);
-        out.append(tab + "}" + separator);
-
+        out.append(";").append(separator);
+        out.append(tab).append("}").append(separator);
     }
 
     private void writeArgs(Class<?>[] args) throws IOException {
         out.append("(");
         for (int i = 0; i < args.length; ++i) {
-            int mod = args[i].getModifiers();
             Modifier.methodModifiers();
-
-            out.append(args[i].getCanonicalName() + " arg" + i);
+            out.append(args[i].getCanonicalName()).append(" arg").append(Integer.toString(i));
             if (i < args.length - 1) {
                 out.append(", ");
             }

@@ -2,41 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="861b70ce-29fd-4540-9fc0-9e8164f47854" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test02_standardMethodlessInterfaces\javax\xml\bind\ElementImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test02_standardMethodlessInterfaces\javax\xml\bind\ElementImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test03_standardInterfaces\javax\accessibility\AccessibleActionImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test03_standardInterfaces\javax\accessibility\AccessibleActionImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test03_standardInterfaces\javax\accessibility\AccessibleImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test03_standardInterfaces\javax\accessibility\AccessibleImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test03_standardInterfaces\javax\annotation\GeneratedImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test03_standardInterfaces\javax\management\DescriptorImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test03_standardInterfaces\javax\sql\rowset\CachedRowSetImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test03_standardInterfaces\javax\sql\rowset\CachedRowSetImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test04_defaultConstructorClasses\javax\imageio\plugins\bmp\BMPImageWriteParamImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test04_defaultConstructorClasses\javax\imageio\plugins\bmp\BMPImageWriteParamImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test04_defaultConstructorClasses\javax\management\relation\RelationNotFoundExceptionImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test04_defaultConstructorClasses\javax\management\relation\RelationNotFoundExceptionImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test05_noDefaultConstructorClasses\javax\imageio\IIOExceptionImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test05_noDefaultConstructorClasses\javax\imageio\IIOExceptionImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test05_noDefaultConstructorClasses\javax\management\ImmutableDescriptorImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test05_noDefaultConstructorClasses\javax\management\ImmutableDescriptorImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test05_noDefaultConstructorClasses\javax\naming\ldap\LdapReferralExceptionImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test05_noDefaultConstructorClasses\javax\naming\ldap\LdapReferralExceptionImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test06_ambiguousConstructorClasses\javax\imageio\IIOImageImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test06_ambiguousConstructorClasses\javax\imageio\IIOImageImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test07_utilityClasses\java\lang\IntegerImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test08_finalClasses\javax\annotation\processing\CompletionsImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test10_constructorThrows\javax\imageio\stream\FileCacheImageInputStreamImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test10_constructorThrows\javax\imageio\stream\FileCacheImageInputStreamImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test11_nonPublicAbstractMethod\javax\management\remote\rmi\RMIIIOPServerImplImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test11_nonPublicAbstractMethod\javax\management\remote\rmi\RMIIIOPServerImplImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test11_nonPublicAbstractMethod\javax\management\remote\rmi\RMIServerImplImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test11_nonPublicAbstractMethod\javax\management\remote\rmi\RMIServerImplImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test12_inheritedNonPublicAbstractMethod\org\omg\CORBA_2_3\ORBImpl.class" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\Руслан\Documents\GitHub\Grep\test12_inheritedNonPublicAbstractMethod\org\omg\CORBA_2_3\ORBImpl.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ClassImplementorTest.java" afterPath="$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ClassImplementorTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Expression.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java" afterPath="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/InterfaceImplementorTest.java" afterPath="$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/InterfaceImplementorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/run.bat" afterPath="$PROJECT_DIR$/src/run.bat" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Grep.iws" />
@@ -138,10 +106,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Implementor.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Implementor.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="59" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3791">
+            <state line="54" column="33" selection-start="1981" selection-end="1981" vertical-scroll-proportion="0.0332681" vertical-offset="901" max-vertical-offset="4012">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -149,10 +117,37 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="Expression.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Expression.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="23" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Grep.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="98" selection-start="2407" selection-end="2479" vertical-scroll-proportion="0.0" vertical-offset="747" max-vertical-offset="1326">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArraySet.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="181" column="42" selection-start="5259" selection-end="5259" vertical-scroll-proportion="0.0" vertical-offset="2447" max-vertical-offset="3502">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ArraySetTests.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/ArraySetTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="9" selection-start="560" selection-end="560" vertical-scroll-proportion="0.0" vertical-offset="44" max-vertical-offset="3009">
+            <state line="24" column="9" selection-start="560" selection-end="560" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="3128">
               <folding />
             </state>
           </provider>
@@ -161,7 +156,7 @@
       <file leaf-file-name="ImplerException.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ImplerException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="13" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="510">
+            <state line="8" column="13" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
               <folding />
             </state>
           </provider>
@@ -179,16 +174,16 @@
       <file leaf-file-name="InterfaceImplementorTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/InterfaceImplementorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="12" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.0" vertical-offset="1593" max-vertical-offset="4284">
+            <state line="75" column="29" selection-start="2512" selection-end="2512" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="4284">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClassImplementorTest.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ClassImplementorTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ClassImplementorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="4" selection-start="925" selection-end="925" vertical-scroll-proportion="-0.8214286" vertical-offset="607" max-vertical-offset="1139">
+            <state line="68" column="31" selection-start="2072" selection-end="2072" vertical-scroll-proportion="0.0" vertical-offset="539" max-vertical-offset="1139">
               <folding />
             </state>
           </provider>
@@ -197,10 +192,8 @@
       <file leaf-file-name="BaseTester.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/base/BaseTester.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="0" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="1003">
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
+            <state line="28" column="0" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="1003">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -231,7 +224,6 @@
         <option value="$PROJECT_DIR$/src/SortedSetTest.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ReverserArraySet.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ReversedArraySet.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java" />
         <option value="$PROJECT_DIR$/tests/ImplementatorTests.java" />
         <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementator.java" />
         <option value="$PROJECT_DIR$/ExpressionImpl.java" />
@@ -243,9 +235,10 @@
         <option value="$PROJECT_DIR$/tests/test07_utilityClasses/java/lang/IntegerImpl.java" />
         <option value="$PROJECT_DIR$/test07_utilityClasses/java/lang/IntegerImpl.java" />
         <option value="$PROJECT_DIR$/tests/test08_finalClasses/javax/annotation/processing/CompletionsImpl.java" />
-        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java" />
-        <option value="$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/InterfaceImplementorTest.java" />
         <option value="$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ClassImplementorTest.java" />
+        <option value="$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/InterfaceImplementorTest.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java" />
+        <option value="$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java" />
       </list>
     </option>
   </component>
@@ -281,6 +274,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -409,8 +404,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,7 +445,7 @@
       <recent name="C:\Grep" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Tests">
+  <component name="RunManager" selected="Application.Grep">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
@@ -666,9 +659,9 @@
     </configuration>
     <configuration default="false" name="Grep" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="ru.ifmo.ctddev.Akhundov.task3.Main" />
+      <option name="MAIN_CLASS_NAME" value="ru.ifmo.ctddev.Akhundov.task3.Implementor" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="ru.ifmo.ctddev.Akhundov.task3.Expression" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -803,7 +796,8 @@
       <workItem from="1394617213221" duration="1626000" />
       <workItem from="1394620542691" duration="4117000" />
       <workItem from="1394629802908" duration="4853000" />
-      <workItem from="1394635774398" duration="20030000" />
+      <workItem from="1394635774398" duration="20126000" />
+      <workItem from="1394694105181" duration="9069000" />
     </task>
     <task id="LOCAL-00001" summary="upd&#10;">
       <created>1392454283933</created>
@@ -817,7 +811,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90960000" />
+    <option name="totallyTimeSpent" value="100125000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -849,6 +843,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771084" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -863,12 +858,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25224647" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32771084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25160462" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32771084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32891566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -895,6 +889,57 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="59" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3791">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/ArraySetTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="9" selection-start="560" selection-end="560" vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="3128">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ImplerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="38" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/Tester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="0" selection-start="370" selection-end="370" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="408">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/InterfaceImplementorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="84" column="12" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.0" vertical-offset="1428" max-vertical-offset="4726">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ClassImplementorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="4" selection-start="925" selection-end="925" vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="1139">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/base/BaseTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="476" max-vertical-offset="1088">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/ArraySetTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="174" column="25" selection-start="5162" selection-end="5162" vertical-scroll-proportion="0.0" vertical-offset="2958" max-vertical-offset="3128">
@@ -1062,13 +1107,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1475" selection-end="1475" vertical-scroll-proportion="0.0" vertical-offset="533" max-vertical-offset="1360">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/java/util/TreeSet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="159" column="0" selection-start="6409" selection-end="6409" vertical-scroll-proportion="0.0" vertical-offset="2135" max-vertical-offset="8874" />
@@ -1099,20 +1137,6 @@
         <state line="19" column="0" selection-start="471" selection-end="471" vertical-scroll-proportion="0.34018266" vertical-offset="157" max-vertical-offset="595" />
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="189" column="0" selection-start="6287" selection-end="6287" vertical-scroll-proportion="0.33270678" vertical-offset="1914" max-vertical-offset="53329">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="0" selection-start="2230" selection-end="2230" vertical-scroll-proportion="-0.19172932" vertical-offset="1241" max-vertical-offset="3502">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/Impler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="20" selection-start="608" selection-end="608" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="527">
@@ -1122,25 +1146,7 @@
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/junit-4.11-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="417" selection-end="417" vertical-scroll-proportion="0.46822035" vertical-offset="0" max-vertical-offset="472">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/base/BaseTester.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="214" max-vertical-offset="1003">
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ImplerException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
+        <state line="13" column="0" selection-start="417" selection-end="417" vertical-scroll-proportion="0.46822035" vertical-offset="0" max-vertical-offset="472" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/ArraySetTests.java">
@@ -1157,26 +1163,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="59" selection-start="1485" selection-end="1485" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="3791">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/InterfaceImplementorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="12" selection-start="2851" selection-end="2851" vertical-scroll-proportion="0.0" vertical-offset="1593" max-vertical-offset="4284">
+        <state line="75" column="29" selection-start="2512" selection-end="2512" vertical-scroll-proportion="0.0" vertical-offset="612" max-vertical-offset="4284">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ClassImplementorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="4" selection-start="925" selection-end="925" vertical-scroll-proportion="-0.8214286" vertical-offset="607" max-vertical-offset="1139">
+        <state line="68" column="31" selection-start="2072" selection-end="2072" vertical-scroll-proportion="0.0" vertical-offset="539" max-vertical-offset="1139">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/base/BaseTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="0" selection-start="672" selection-end="672" vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task2/ArraySet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="181" column="42" selection-start="5259" selection-end="5259" vertical-scroll-proportion="0.0" vertical-offset="2447" max-vertical-offset="3502">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task1/Grep.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="98" selection-start="2407" selection-end="2479" vertical-scroll-proportion="0.0" vertical-offset="747" max-vertical-offset="1326">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/kgeorgiy/java/advanced/implementor/ImplerException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="237" selection-end="237" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_51/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1895" column="28" selection-start="80520" selection-end="80520" vertical-scroll-proportion="0.33268103" vertical-offset="30855" max-vertical-offset="53329">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Expression.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="23" selection-start="105" selection-end="105" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/ifmo/ctddev/Akhundov/task3/Implementor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="33" selection-start="1981" selection-end="1981" vertical-scroll-proportion="0.0332681" vertical-offset="901" max-vertical-offset="4012">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
