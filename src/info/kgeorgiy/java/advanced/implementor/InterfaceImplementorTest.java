@@ -19,6 +19,7 @@ import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 import javax.xml.bind.Element;
 import java.io.File;
+import java.lang.reflect.Modifier;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -56,6 +57,7 @@ public class InterfaceImplementorTest {
     public void test01_constructor() throws ClassNotFoundException, NoSuchMethodException {
         Class<?> token = loadClass();
         Assert.assertTrue(token.getName() + " should implement Impler interface", Impler.class.isAssignableFrom(token));
+        Assert.assertTrue(token.getName() + " should implement JarImpler interface", JarImpler.class.isAssignableFrom(token));
         checkConstructor("public default constructor", token);
     }
 
@@ -82,7 +84,7 @@ public class InterfaceImplementorTest {
                 check(root, Arrays.asList(classes));
             }
         } finally {
-            clean(root);
+            //clean(root);
         }
     }
 
@@ -136,23 +138,23 @@ public class InterfaceImplementorTest {
         }
     }
 
-    protected void implement(boolean shouldFail, File root, List<String> classNames, File... classpath) throws MalformedURLException, ClassNotFoundException {
-        URL[] urls = new URL[classpath.length];
-        for (int i = 0; i < classpath.length; i++) {
-            urls[i] = classpath[i].toURI().toURL();
-        }
-        ClassLoader loader = new URLClassLoader(urls);
-        List<Class<?>> classes = new ArrayList<>();
-        for (String className : classNames) {
-            classes.add(loader.loadClass(className));
-        }
-        implement(shouldFail, root, classes);
-    }
+//    protected void implement(boolean shouldFail, File root, List<String> classNames, File... classpath) throws MalformedURLException, ClassNotFoundException {
+//        URL[] urls = new URL[classpath.length];
+//        for (int i = 0; i < classpath.length; i++) {
+//            urls[i] = classpath[i].toURI().toURL();
+//        }
+//        ClassLoader loader = new URLClassLoader(urls);
+//        List<Class<?>> classes = new ArrayList<>();
+//        for (String className : classNames) {
+//            classes.add(loader.loadClass(className));
+//        }
+//        implement(shouldFail, root, classes);
+//    }
 
     private void implement(boolean shouldFail, File root, List<Class<?>> classes) {
-        Impler implementor;
+        JarImpler implementor;
         try {
-            implementor = (Impler) loadClass().newInstance();
+            implementor = (JarImpler) loadClass().newInstance();
         } catch (Exception e) {
             e.printStackTrace();
             Assert.fail("Instantiation error");
@@ -161,6 +163,9 @@ public class InterfaceImplementorTest {
         for (Class<?> clazz : classes) {
             try {
                 implementor.implement(clazz, root);
+                File jarFile = new File(root, clazz.getName() + ".jar");
+                implementor.implementJar(clazz, jarFile);
+                checkJar(jarFile, clazz);
                 Assert.assertTrue("You may not implement " + clazz, !shouldFail);
             } catch (ImplerException e) {
                 if (shouldFail) return;
@@ -188,18 +193,28 @@ public class InterfaceImplementorTest {
     private void check(File root, List<Class<?>> classes) {
         URLClassLoader loader = getClassLoader(root);
         for (Class<?> token : classes) {
-            String name = token.getCanonicalName() + "Impl";
-            try {
-                Class<?> impl = loader.loadClass(name);
+            check(loader, token);
+        }
+    }
 
-                if (token.isInterface()) {
-                    Assert.assertTrue(name + " should implement " + token, Arrays.asList(impl.getInterfaces()).contains(token)) ;
-                } else {
-                    Assert.assertEquals(name + " should extend " + token, token, impl.getSuperclass()) ;
-                }
-            } catch (ClassNotFoundException e) {
-                throw new AssertionError("Error loading class " + name, e);
+    private void checkJar(File jarFile, Class<?> token) {
+        check(getClassLoader(jarFile), token);
+    }
+
+    private void check(URLClassLoader loader, Class<?> token) {
+        String name = token.getCanonicalName() + "Impl";
+        try {
+            Class<?> impl = loader.loadClass(name);
+
+            if (token.isInterface()) {
+                Assert.assertTrue(name + " should implement " + token, Arrays.asList(impl.getInterfaces()).contains(token)) ;
+            } else {
+                Assert.assertEquals(name + " should extend " + token, token, impl.getSuperclass()) ;
             }
+            Assert.assertFalse(name + " should not be abstract", Modifier.isAbstract(impl.getModifiers()));
+            Assert.assertFalse(name + " should not be interface", Modifier.isInterface(impl.getModifiers()));
+        } catch (ClassNotFoundException e) {
+            throw new AssertionError("Error loading class " + name, e);
         }
     }
 
