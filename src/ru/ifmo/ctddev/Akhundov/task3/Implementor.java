@@ -23,16 +23,33 @@ import java.util.zip.ZipEntry;
  */
 public class Implementor implements Impler, JarImpler {
 
+    /**
+     * Class for which we want to generate implementation
+     *
+     * @see java.lang.Class
+     */
     private Class<?> classToImplement;
+
+    /**
+     * out stream for writing .java files with Implementation.
+     *
+     * @see java.io.FileWriter
+     */
     private FileWriter out;
-    private List<Method> methods;
-    private Constructor[] constructors;
-    private String separator = System.lineSeparator();
-    private String tab = "    ";
+
+    /**
+     * System line SEPARATOR char sequence.
+     */
+    private final String SEPARATOR = System.lineSeparator();
+
+    /**
+     * Tab char sequence.
+     */
+    private final String TAB = "    ";
 
 
     /**
-     * Starts Implmentor with defined arguments.
+     * Starts Implementor with defined arguments.
      *
      * @param args arg[0] - class or interface to implement, arg[1] - path to place where jar file must be placed.
      */
@@ -93,18 +110,7 @@ public class Implementor implements Impler, JarImpler {
             try (FileWriter out = new FileWriter(f)) {
                 this.classToImplement = token;
                 this.out = out;
-                constructors = classToImplement.getDeclaredConstructors();
-                boolean allConstructorArePrivate = true;
-                for (Constructor constructor : constructors) {
-                    allConstructorArePrivate = Modifier.isPrivate(constructor.getModifiers());
-                    if (!allConstructorArePrivate) {
-                        break;
-                    }
-                }
-                if (allConstructorArePrivate && !classToImplement.isInterface()) {
-                    throw new ImplerException();
-                }
-                methods = getAllMethods(classToImplement);
+
                 writeClass();
                 out.close();
             }
@@ -140,13 +146,16 @@ public class Implementor implements Impler, JarImpler {
      */
     private static void makeJar(String jarPath, String classPath) throws IOException {
         File jarFile = new File(jarPath);
-        jarFile.getParentFile().mkdirs();
+        File parent = jarFile.getParentFile();
+        if (parent != null) {
+            parent.mkdirs();
+        }
         jarFile.createNewFile();
         String newClassPath = classPath.substring(classPath.indexOf("tmp/") + 4);
         FileOutputStream fout = new FileOutputStream(jarFile);
         Manifest manifest = new Manifest();
         manifest.getMainAttributes().put(Attributes.Name.MANIFEST_VERSION, "1.0");
-        manifest.getMainAttributes().put(Attributes.Name.MAIN_CLASS, newClassPath);
+        //manifest.getMainAttributes().put(Attributes.Name.MAIN_CLASS, newClassPath);
         JarOutputStream jarOut = new JarOutputStream(fout, manifest);
         jarOut.putNextEntry(new ZipEntry(newClassPath));
         FileInputStream fit = new FileInputStream(classPath);
@@ -172,9 +181,7 @@ public class Implementor implements Impler, JarImpler {
      */
     public void implementJar(Class<?> token, File jar) throws ImplerException {
         try {
-            String name = token.getSimpleName();
             String fileAbsPath = "tmp/";
-            String fpackage = token.getPackage().getName();
             fileAbsPath += token.getPackage().getName().replaceAll("\\.", "/");
             fileAbsPath += (token.getPackage().getName().isEmpty()) ? "" : "/";
             (new File(fileAbsPath)).mkdirs();
@@ -182,28 +189,66 @@ public class Implementor implements Impler, JarImpler {
             this.out = new FileWriter(fileAbsPath, true);
             this.classToImplement = token;
             writeClass();
+            out.close();
             compileFile(fileAbsPath);
-            makeJar(jar.getPath(), fileAbsPath.substring(0, fileAbsPath.indexOf(".java")) + ".class");
-        } catch (Exception e) {
-            System.out.println("Error");
+            String classAbsPath = fileAbsPath.substring(0, fileAbsPath.indexOf(".java")) + ".class";
+            makeJar(jar.getPath(), classAbsPath);
+            System.gc();
+            recDelete(new File("tmp/"));
+        } catch (IOException e) {
+            System.out.println("Error occurred while working with files");
         }
+    }
+
+    /**
+     * Deletes directory and all files in it.
+     *
+     * @param file path to directory or file to delete.
+     */
+    private void recDelete(File file) {
+        if (!file.exists()) {
+            return;
+        }
+        if (file.isDirectory()) {
+            File[] list = file.listFiles();
+            if (list != null) {
+                for (File f : list) {
+                    recDelete(f);
+                }
+            }
+        }
+        file.delete();
     }
 
     /**
      * Writes a java code of the given class or interface.
      *
-     * @throws IOException in case of something bad happened when we were writing in file.
+     * @throws IOException                                             in case of something bad happened when we were writing in file.
+     * @throws info.kgeorgiy.java.advanced.implementor.ImplerException if cannot implement given class.
+     * @see info.kgeorgiy.java.advanced.implementor.ImplerException
      */
-    private void writeClass() throws IOException {
-        out.append("package ").append(classToImplement.getPackage().getName()).append(";").append(separator);
-        out.append(separator);
+    private void writeClass() throws IOException, ImplerException {
+        Constructor[] constructors = classToImplement.getDeclaredConstructors();
+        boolean allConstructorArePrivate = true;
+        for (Constructor constructor : constructors) {
+            allConstructorArePrivate = Modifier.isPrivate(constructor.getModifiers());
+            if (!allConstructorArePrivate) {
+                break;
+            }
+        }
+        if (allConstructorArePrivate && !classToImplement.isInterface()) {
+            throw new ImplerException("all constructors are private");
+        }
+        List<Method> methods = getAllMethods(classToImplement);
+        out.append("package ").append(classToImplement.getPackage().getName()).append(";").append(SEPARATOR);
+        out.append(SEPARATOR);
         out.append("public class ").append(classToImplement.getSimpleName()).append("Impl");
         if (classToImplement.isInterface()) {
             out.append(" implements ");
         } else {
             out.append(" extends ");
         }
-        out.append(classToImplement.getCanonicalName()).append(" {").append(separator);
+        out.append(classToImplement.getCanonicalName()).append(" {").append(SEPARATOR);
         for (Constructor constructor : constructors) {
             writeConstructors(constructor);
         }
@@ -229,12 +274,12 @@ public class Implementor implements Impler, JarImpler {
         if (Modifier.isTransient(modifiers)) {
             modifiers ^= Modifier.TRANSIENT;
         }
-        out.append(tab).append(Modifier.toString(modifiers));
+        out.append(TAB).append(Modifier.toString(modifiers));
         out.append(" ").append(classToImplement.getSimpleName()).append("Impl");
         writeArgs(constructor.getParameterTypes());
         writeExceptions(constructor.getExceptionTypes());
-        out.append(" {").append(separator);
-        out.append(tab).append(tab).append("super(");
+        out.append(" {").append(SEPARATOR);
+        out.append(TAB).append(TAB).append("super(");
         int argsNum = constructor.getParameterTypes().length;
         for (int i = 0; i < argsNum; ++i) {
             out.append("arg").append(Integer.toString(i));
@@ -242,8 +287,8 @@ public class Implementor implements Impler, JarImpler {
                 out.append(", ");
             }
         }
-        out.append(");").append(separator);
-        out.append(tab).append("}").append(separator);
+        out.append(");").append(SEPARATOR);
+        out.append(TAB).append("}").append(SEPARATOR);
     }
 
 
@@ -267,8 +312,8 @@ public class Implementor implements Impler, JarImpler {
         if (Modifier.isTransient(modifiers)) {
             modifiers ^= Modifier.TRANSIENT;
         }
-        out.append(separator);
-        out.append(tab).append("@Override").append(separator).append(tab);
+        out.append(SEPARATOR);
+        out.append(TAB).append("@Override").append(SEPARATOR).append(TAB);
         Class<?>[] args = method.getParameterTypes();
         out.append(Modifier.toString(modifiers));
         Class<?> returnType = method.getReturnType();
@@ -276,8 +321,8 @@ public class Implementor implements Impler, JarImpler {
         out.append(" ").append(method.getName());
         writeArgs(args);
         writeExceptions(method.getExceptionTypes());
-        out.append("{").append(separator);
-        out.append(tab).append(tab).append("return ");
+        out.append("{").append(SEPARATOR);
+        out.append(TAB).append(TAB).append("return ");
         if (returnType.isPrimitive()) {
             if ("boolean".equals(returnType.getCanonicalName())) {
                 out.append("true");
@@ -289,8 +334,8 @@ public class Implementor implements Impler, JarImpler {
         } else {
             out.append("null");
         }
-        out.append(";").append(separator);
-        out.append(tab).append("}").append(separator);
+        out.append(";").append(SEPARATOR);
+        out.append(TAB).append("}").append(SEPARATOR);
     }
 
     /**

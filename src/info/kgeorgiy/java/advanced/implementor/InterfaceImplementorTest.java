@@ -84,7 +84,7 @@ public class InterfaceImplementorTest {
                 check(root, Arrays.asList(classes));
             }
         } finally {
-            //clean(root);
+            clean(root);
         }
     }
 
