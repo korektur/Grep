@@ -22,11 +22,15 @@ public class Client implements Runnable {
 
     }
 
+    /**
+     * Runs Client. In infinite cycle it creates tasks and input values for them,
+     * then it gives them to the <tt>TaskRunner</tt> and prints the result when
+     * it's ready.
+     */
     @Override
     public void run() {
         while(true) {
             Task<String, String> newTask = new TaskImpl1<>();
-            double value = 1.1;
             System.out.println(taskRunner.run(newTask, "let's go"));
         }
     }
