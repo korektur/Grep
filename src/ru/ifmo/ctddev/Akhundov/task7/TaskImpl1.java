@@ -1,4 +1,4 @@
-package ru.ifmo.ctddev.Akhundov.task6;
+package ru.ifmo.ctddev.Akhundov.task7;
 
 
 public class TaskImpl1<X, Y> implements Task<X, Y> {
