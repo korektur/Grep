@@ -7,6 +7,7 @@ package ru.ifmo.ctddev.Akhundov.task6;
 public class Main {
     /**
      * Starts clients. Amount of clients are equal to the first argument from args.
+     *
      * @param args input arguments.
      */
     public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class Main {
 
     private static void startClient(TaskRunnerImpl runner) {
         Client client = new Client(runner);
-        Thread clientThread  = new Thread(client);
+        Thread clientThread = new Thread(client);
         clientThread.start();
     }
 

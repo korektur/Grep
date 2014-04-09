@@ -5,8 +5,8 @@ import ru.ifmo.ctddev.Akhundov.task7.TaskImpl1;
 
 /**
  * @author Ruslan
- *
- * This class generates tasks in infinite cicle and runs taskRuner which need to complete them
+ *         <p>
+ *         This class generates tasks in infinite cicle and runs taskRuner which need to complete them
  */
 public class Client implements Runnable {
 
@@ -28,7 +28,7 @@ public class Client implements Runnable {
      */
     @Override
     public void run() {
-        while(true) {
+        while (true) {
             Task<String, String> newTask = new TaskImpl1<>();
             System.out.println(taskRunner.run(newTask, "let's go"));
         }

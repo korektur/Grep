@@ -39,6 +39,7 @@ public class TaskRunnerImpl implements TaskRunner {
 
     /**
      * Default constructor. Creates a new <tt>TaskRunnerImpl</tt> for solving tasks.
+     * @param numOfThreads number of threads in which we will execute tasks.
      */
     public TaskRunnerImpl(int numOfThreads) {
         tasksQueue = new LinkedBlockingQueue<>();

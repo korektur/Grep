@@ -4,16 +4,15 @@ import ru.ifmo.ctddev.Akhundov.task7.Task;
 
 /**
  * @author Руслан
- * TaskRunner interface. It takes a task with the input and solves it.
+ *         TaskRunner interface. It takes a task with the input and solves it.
  */
 public interface TaskRunner {
 
     /**
-     *
-     * @param task Task to be solved
+     * @param task  Task to be solved
      * @param value Input for the task
-     * @param <X> Output type of task
-     * @param <Y> Input type of task
+     * @param <X>   Output type of task
+     * @param <Y>   Input type of task
      * @return tasks result
      * @see ru.ifmo.ctddev.Akhundov.task7.Task
      */
