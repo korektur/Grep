@@ -1,6 +1,5 @@
 package ru.ifmo.ctddev.Akhundov.task7;
 
-import java.util.Objects;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
