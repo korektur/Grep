@@ -1,7 +1,12 @@
 package ru.ifmo.ctddev.Akhundov.task7;
 
+import java.util.concurrent.BlockingQueue;
+
 /**
- * Created by Руслан on 08.04.2014.
+ * @author Руслан
+ * Producs tasks for Publisher
  */
 public class Producer {
+
+
 }

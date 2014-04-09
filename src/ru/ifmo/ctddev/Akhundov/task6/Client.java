@@ -1,5 +1,8 @@
 package ru.ifmo.ctddev.Akhundov.task6;
 
+import ru.ifmo.ctddev.Akhundov.task7.Task;
+import ru.ifmo.ctddev.Akhundov.task7.TaskImpl1;
+
 /**
  * @author Ruslan
  *
@@ -7,11 +10,7 @@ package ru.ifmo.ctddev.Akhundov.task6;
  */
 public class Client implements Runnable {
 
-    /**
-     *  TaskRunner which will complete tasks
-     *  @see ru.ifmo.ctddev.Akhundov.task6.TaskRunner
-     */
-    TaskRunner taskRunner;
+    private TaskRunner taskRunner;
 
     /**
      * @param taskRunner this object will be completing tasks

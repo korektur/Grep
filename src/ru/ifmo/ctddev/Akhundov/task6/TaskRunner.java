@@ -1,5 +1,7 @@
 package ru.ifmo.ctddev.Akhundov.task6;
 
+import ru.ifmo.ctddev.Akhundov.task7.Task;
+
 /**
  * @author Руслан
  * TaskRunner interface. It takes a task with the input and solves it.
@@ -13,7 +15,7 @@ public interface TaskRunner {
      * @param <X> Output type of task
      * @param <Y> Input type of task
      * @return tasks result
-     * @see ru.ifmo.ctddev.Akhundov.task6.Task
+     * @see ru.ifmo.ctddev.Akhundov.task7.Task
      */
     <X, Y> X run(Task<X, Y> task, Y value);
 
