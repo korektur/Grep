@@ -30,7 +30,7 @@ public class Client implements Runnable {
     public void run() {
         while (true) {
             Task<String, String> newTask = new TaskImpl1<>();
-            System.out.println(taskRunner.run(newTask, "let's go"));
+            System.out.println(taskRunner.run(newTask, "task"));
         }
     }
 
