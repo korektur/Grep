@@ -1,5 +1,6 @@
 package ru.ifmo.ctddev.Akhundov.task7;
 
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
@@ -19,7 +20,7 @@ public class Main {
      * @see ru.ifmo.ctddev.Akhundov.task7.Publisher
      */
     public static void main(String[] args) {
-        BlockingQueue<TaskAndInput<String, String>> taskQueue = new LinkedBlockingQueue<>();
+        BlockingQueue<TaskAndInput<String, String>> taskQueue = new ArrayBlockingQueue<>(NUM_OF_THREADS);
         BlockingQueue<String> resultQueue = new LinkedBlockingQueue<>();
         for (int i = 0; i < NUM_OF_THREADS; ++i) {
             startProducer(taskQueue);
