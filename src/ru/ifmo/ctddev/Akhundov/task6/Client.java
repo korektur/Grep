@@ -28,9 +28,11 @@ public class Client implements Runnable {
      */
     @Override
     public void run() {
+        int i = 0;
         while (true) {
+            i++;
             Task<String, String> newTask = new TaskImpl1<>();
-            System.out.println(taskRunner.run(newTask, "task"));
+            System.out.println(taskRunner.run(newTask, Integer.toString(i)));
         }
     }
 

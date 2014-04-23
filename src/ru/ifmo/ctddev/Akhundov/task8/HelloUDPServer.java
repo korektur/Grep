@@ -1,0 +1,54 @@
+package ru.ifmo.ctddev.Akhundov.task8;
+
+
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.SocketException;
+
+public class HelloUDPServer implements Runnable {
+
+    private final int id;
+    private static final int MAX_BUFF_SIZE = 65535;
+    private final DatagramSocket socket;
+    private static final int NUM_OF_THREADS = 10;
+
+    public static void main(String[] args) {
+        int port = Integer.parseInt(args[0]);
+        try {
+            DatagramSocket socket = new DatagramSocket(port);
+            for (int i = 0; i < NUM_OF_THREADS; ++i) {
+                Thread newThread = new Thread(new HelloUDPServer(socket, i));
+                newThread.start();
+            }
+        } catch (SocketException e) {
+            System.out.println("cannot open socket on server");
+        }
+    }
+
+    public HelloUDPServer(DatagramSocket socket, int id) {
+        this.socket = socket;
+        this.id = id;
+    }
+
+    @Override
+    public void run() {
+        while (!Thread.currentThread().isInterrupted()) {
+            DatagramPacket receivingPacket = new DatagramPacket(new byte[MAX_BUFF_SIZE], MAX_BUFF_SIZE);
+            try {
+                socket.receive(receivingPacket);
+                String message = new String(receivingPacket.getData(), 0, receivingPacket.getLength());
+                message = "Hello, " + message;
+                byte[] toSend = message.getBytes();
+                DatagramPacket packet = new DatagramPacket(toSend,
+                        toSend.length, receivingPacket.getAddress(), receivingPacket.getPort());
+                socket.send(packet);
+            } catch (IOException e) {
+                System.out.println("IOException in server thread " + (id + 1) + ". Interrupting.");
+                Thread.currentThread().interrupt();
+            }
+        }
+    }
+
+
+}

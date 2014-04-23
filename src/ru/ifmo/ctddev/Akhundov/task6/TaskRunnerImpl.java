@@ -2,6 +2,8 @@ package ru.ifmo.ctddev.Akhundov.task6;
 
 import ru.ifmo.ctddev.Akhundov.task7.Task;
 
+import java.util.ArrayDeque;
+import java.util.Queue;
 import java.util.concurrent.*;
 
 /**
@@ -15,10 +17,10 @@ public class TaskRunnerImpl implements TaskRunner {
 
     private final int NUM_OF_THREADS;
     private volatile boolean started;
-    private BlockingQueue<FutureTask<?>> tasksQueue;
+    private final Queue<TaskAndInput<?, ?>> tasksQueue;
 
 
-    private class TaskAndInput<X, Y> implements Callable<X> {
+    protected class TaskAndInput<X, Y> implements Callable<X> {
 
 
         private Task<X, Y> task;
@@ -32,17 +34,18 @@ public class TaskRunnerImpl implements TaskRunner {
         }
 
         @Override
-        public X call() throws Exception {
+        public X call() {
             return task.run(value);
         }
     }
 
     /**
      * Default constructor. Creates a new <tt>TaskRunnerImpl</tt> for solving tasks.
+     *
      * @param numOfThreads number of threads in which we will execute tasks.
      */
     public TaskRunnerImpl(int numOfThreads) {
-        tasksQueue = new LinkedBlockingQueue<>();
+        tasksQueue = new ArrayDeque<>();
         NUM_OF_THREADS = numOfThreads;
         started = false;
     }
@@ -52,12 +55,9 @@ public class TaskRunnerImpl implements TaskRunner {
         @Override
         public void run() {
             while (!Thread.currentThread().isInterrupted()) {
-                try {
-                    FutureTask<?> taskToRun = tasksQueue.take();
-                    taskToRun.run();
-                } catch (InterruptedException e) {
-                    System.out.println("task was interrupted while running");
-                    Thread.currentThread().interrupt();
+                synchronized (tasksQueue) {
+
+
                 }
             }
         }
@@ -87,15 +87,8 @@ public class TaskRunnerImpl implements TaskRunner {
      * @return result of the task
      */
     public <X, Y> X run(Task<X, Y> task, Y value) {
-        try {
-            FutureTask<X> futureTask = new FutureTask<>(new TaskAndInput<>(task, value));
-            tasksQueue.put(futureTask);
-            return futureTask.get();
-        } catch (InterruptedException e) {
-            System.out.println("task was interrupted");
-        } catch (ExecutionException e) {
-            System.out.println("failed to execute task");
-        }
-        return null;
+        TaskAndInput<X, Y> futureTask = new TaskAndInput<>(task, value);
+        tasksQueue.add(futureTask);
+        return futureTask.call();
     }
 }
