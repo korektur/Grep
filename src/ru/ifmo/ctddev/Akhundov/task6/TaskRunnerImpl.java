@@ -2,10 +2,6 @@ package ru.ifmo.ctddev.Akhundov.task6;
 
 import ru.ifmo.ctddev.Akhundov.task7.Task;
 
-import java.util.ArrayDeque;
-import java.util.Queue;
-import java.util.concurrent.*;
-
 /**
  * @author Ruslan
  *         TaskRunner interface implementation. It puts task in queue and returns result when it's ready
@@ -17,26 +13,31 @@ public class TaskRunnerImpl implements TaskRunner {
 
     private final int NUM_OF_THREADS;
     private volatile boolean started;
-    private final Queue<TaskAndInput<?, ?>> tasksQueue;
+    private final BlockingQueue<TaskAndInput<?, ?>> tasksQueue;
 
 
-    protected class TaskAndInput<X, Y> implements Callable<X> {
+    private class TaskAndInput<X, Y> {
 
 
         private Task<X, Y> task;
-
-
         private Y value;
+        private volatile X result;
 
         public TaskAndInput(Task<X, Y> task, Y value) {
             this.task = task;
             this.value = value;
+            result = null;
         }
 
-        @Override
-        public X call() {
-            return task.run(value);
+        public void run() {
+            result = task.run(value);
         }
+
+        public X call() {
+            while(result == null);
+            return result;
+        }
+
     }
 
     /**
@@ -45,7 +46,7 @@ public class TaskRunnerImpl implements TaskRunner {
      * @param numOfThreads number of threads in which we will execute tasks.
      */
     public TaskRunnerImpl(int numOfThreads) {
-        tasksQueue = new ArrayDeque<>();
+        tasksQueue = new BlockingQueue<>();
         NUM_OF_THREADS = numOfThreads;
         started = false;
     }
@@ -53,12 +54,10 @@ public class TaskRunnerImpl implements TaskRunner {
     private class Worker implements Runnable {
 
         @Override
+        @SuppressWarnings("unchecked")
         public void run() {
             while (!Thread.currentThread().isInterrupted()) {
-                synchronized (tasksQueue) {
-
-
-                }
+                tasksQueue.pop().run();
             }
         }
     }
@@ -88,7 +87,7 @@ public class TaskRunnerImpl implements TaskRunner {
      */
     public <X, Y> X run(Task<X, Y> task, Y value) {
         TaskAndInput<X, Y> futureTask = new TaskAndInput<>(task, value);
-        tasksQueue.add(futureTask);
+        tasksQueue.push(futureTask);
         return futureTask.call();
     }
 }

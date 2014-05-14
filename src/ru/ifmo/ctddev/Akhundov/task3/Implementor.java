@@ -2,7 +2,7 @@ package ru.ifmo.ctddev.Akhundov.task3;
 
 import info.kgeorgiy.java.advanced.implementor.Impler;
 import info.kgeorgiy.java.advanced.implementor.ImplerException;
-import info.kgeorgiy.java.advanced.implementor.JarImpler;
+//import info.kgeorgiy.java.advanced.implementor.JarImpler;
 
 import javax.tools.*;
 import java.io.*;
@@ -21,7 +21,7 @@ import java.util.zip.ZipEntry;
  *         It takes an interface or class and writes a java code of it's implementation(all methods returns default values,
  *         and constructors call super). Then it compiles writen code to .class file, and then makes a jar from it.
  */
-public class Implementor implements Impler, JarImpler {
+public class Implementor implements Impler{
 
     /**
      * Class for which we want to generate implementation

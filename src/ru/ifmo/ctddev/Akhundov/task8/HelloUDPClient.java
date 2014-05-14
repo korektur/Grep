@@ -3,7 +3,6 @@ package ru.ifmo.ctddev.Akhundov.task8;
 import java.io.IOException;
 import java.net.*;
 
-
 /**
  * @author Руслан
  *         Client which generates tasks for Server. Sends it by UDP, and then recieves the result.
@@ -41,17 +40,8 @@ public class HelloUDPClient implements Runnable {
             //System.out.println(Inet4Address.getLocalHost().getHostAddress());
             inetAddress = InetAddress.getByName(name);
         } catch (UnknownHostException e) {
-            String[] parts = name.split("\\.");
-            byte[] address = new byte[parts.length];
-            for (int i = 0; i < parts.length; ++i) {
-                address[i] = Byte.parseByte(parts[i]);
-            }
-            try {
-                inetAddress = InetAddress.getByAddress(address);
-            } catch (UnknownHostException ex) {
-                System.out.println("unknown host");
-                return;
-            }
+            System.out.print("Unknown host");
+            return;
         }
 
         for (int i = 0; i < NUM_OF_THREADS; ++i) {
@@ -59,8 +49,7 @@ public class HelloUDPClient implements Runnable {
                 Thread newThread = new Thread(new HelloUDPClient(inetAddress, port, prefix, i));
                 newThread.start();
             } catch (SocketException e) {
-                System.out.println("an error occurred during client creation");
-                return;
+                System.out.println("an error occurred during client creation " + (i + 1));
             }
         }
     }
@@ -92,7 +81,7 @@ public class HelloUDPClient implements Runnable {
     @Override
     public void run() {
         int num = 0;
-        while (!Thread.currentThread().isInterrupted()) {
+        while (!Thread.currentThread().isInterrupted() && !socket.isClosed()) {
             String request = prefix + "_" + (id + 1) + "_" + (num++);
             byte[] bytes = request.getBytes();
             DatagramPacket datagramPacket = new DatagramPacket(bytes, bytes.length, address, port);
@@ -107,9 +96,11 @@ public class HelloUDPClient implements Runnable {
                 System.out.println(message);
             } catch (IOException e) {
                 System.out.println("IOException at client thread " + (id + 1) + ". Interrupting.");
+                socket.close();
                 Thread.currentThread().interrupt();
             }
         }
+        socket.close();
     }
 
 }
